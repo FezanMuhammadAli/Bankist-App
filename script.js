@@ -80,6 +80,20 @@ const displayMovements = function (movements) {
 
 displayMovements(account1.movements);
 
+// COMPUTE USERNAMES
+const createUsername = (accs) =>
+  accs.forEach(
+    (acc) =>
+      (acc.username = acc.owner
+        .toLowerCase()
+        .split(" ")
+        .map((name) => name[0])
+        .join(""))
+  );
+
+createUsername(accounts);
+console.log(accounts);
+
 /////////////////////////////////////////////////
 /////////////////////////////////////////////////
 // LECTURES
@@ -156,11 +170,11 @@ const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 
 // ALTERNATIVE VIA MAP
 
-const movementsDescription = movements.map(
-  (mov, i) =>
-    `Movement ${i + 1}: You ${mov > 0 ? "deposited" : "withdrew"} ${mov}`
-);
-console.log(movementsDescription);
+// const movementsDescription = movements.map(
+//   (mov, i) =>
+//     `Movement ${i + 1}: You ${mov > 0 ? "deposited" : "withdrew"} ${mov}`
+// );
+// console.log(movementsDescription);
 
 // FOR EACH WITH SETS AND mAPS
 
@@ -210,12 +224,12 @@ console.log(movementsDescription);
 //   // );
 // });
 
-const eurToUsd = 1.1;
-const movementsUSD = movements.map(function (mov) {
-  return mov * eurToUsd;
-});
+// const eurToUsd = 1.1;
+// const movementsUSD = movements.map(function (mov) {
+//   return mov * eurToUsd;
+// });
 
 // Arrow Version
 // const movementsUSD = movements.map((value) => value * eurToUsd);
-console.log(movementsUSD);
-console.log(movements);
+// console.log(movementsUSD);
+// console.log(movements);
