@@ -233,3 +233,9 @@ const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 // const movementsUSD = movements.map((value) => value * eurToUsd);
 // console.log(movementsUSD);
 // console.log(movements);
+
+const deposit = movements.filter((mov) => mov > 0);
+console.log(deposit);
+
+const withdrew = movements.filter((mov) => mov < 0);
+console.log(withdrew);
