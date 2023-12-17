@@ -154,6 +154,14 @@ const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 //   }
 // });
 
+// ALTERNATIVE VIA MAP
+
+const movementsDescription = movements.map(
+  (mov, i) =>
+    `Movement ${i + 1}: You ${mov > 0 ? "deposited" : "withdrew"} ${mov}`
+);
+console.log(movementsDescription);
+
 // FOR EACH WITH SETS AND mAPS
 
 // const currencies = new Map([
@@ -178,26 +186,36 @@ const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 // }
 
 // CODING CHALLANGE
-const juilaData1 = [3, 5, 2, 12, 7];
-const kateData1 = [4, 1, 15, 8, 3];
-const correctJuliaData1 = juilaData1.slice(1, 3);
-const finalData1 = correctJuliaData1.concat(kateData1);
+// const juilaData1 = [3, 5, 2, 12, 7];
+// const kateData1 = [4, 1, 15, 8, 3];
+// const correctJuliaData1 = juilaData1.slice(1, 3);
+// const finalData1 = correctJuliaData1.concat(kateData1);
 
-console.log(finalData1);
+// console.log(finalData1);
 
-finalData1.forEach(function (value, index) {
-  if (value >= 5) {
-    console.log(
-      `Dog number ${index + 1} is an adult, and is ${value} years old.`
-    );
-  } else {
-    console.log(`Dog number ${index + 1} is still a puppy 🐶.`);
-  }
-  // console.log(
-  //   `Dog number ${index + 1} is ${
-  //     value >= 5
-  //       ? ` an adult , and is ${value} years old.`
-  //       : ` is still a puppy 🐶.`
-  //   }`
-  // );
+// finalData1.forEach(function (value, index) {
+//   if (value >= 5) {
+//     console.log(
+//       `Dog number ${index + 1} is an adult, and is ${value} years old.`
+//     );
+//   } else {
+//     console.log(`Dog number ${index + 1} is still a puppy 🐶.`);
+//   }
+//   // console.log(
+//   //   `Dog number ${index + 1} is ${
+//   //     value >= 5
+//   //       ? ` an adult , and is ${value} years old.`
+//   //       : ` is still a puppy 🐶.`
+//   //   }`
+//   // );
+// });
+
+const eurToUsd = 1.1;
+const movementsUSD = movements.map(function (mov) {
+  return mov * eurToUsd;
 });
+
+// Arrow Version
+// const movementsUSD = movements.map((value) => value * eurToUsd);
+console.log(movementsUSD);
+console.log(movements);
